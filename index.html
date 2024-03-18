@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Endangered Species</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1 class="title">Top 10 World's Most <span class="underline">Endangered</span> Animals</h1>
+   
+    <div class="button-container">
+        <button id="Marine">Marine</button>
+        <button id="Terrestrial">Terrestrial</button>
+        <button id="All">All</button>
+        
+    </div>
+
+    <div class="filter-container">
+        <label for="extinction-filter">Filter by Number:</label>
+        <select id="extinction-filter">
+            <option value="all">All</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="box Marine">
+            <div class="ranking">10</div>
+            <h2>Hawksbill Turtles</h2>
+            <img src="images/hawksbillTurtle.png" alt="Hawksbill Turtle">
+            <h4><i class="material-icons">place</i> Atlantic, the Indian, and the Pacific Ocean</h4>
+            <p>Reason: Accidental capture in fishing gears...</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">9</div>
+            <h2>Sumatran Orangutan</h2>
+            <img src="images/orangutan.jpg" alt="Sumatran Orangutan">
+            <h4><i class="material-icons">place</i> Sumatra, Indonesia</h4>
+            <p>Reason: Loss of forest habitat.</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">8</div>
+            <h2>African Forest Elephant</h2>
+            <img src="images/elephant.jpg" alt="African Forest Elephant">
+            <h4><i class="material-icons">place</i> West and Central Africa</h4>
+            <p>Reason: Poaching, habitat loss due to land-use for agriculture.</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">7</div>
+            <h2>Black Rhinos</h2>
+            <img src="images/rhino.jpg" alt="Black Rhinos">
+            <h4><i class="material-icons">place</i> Kenya, Namibia, South Africa, and Zimbabwe</h4>
+            <p>Reason: Poaching for their horn.</p>
+        </div>
+        <div class="box Marine">
+            <div class="ranking">6</div>
+            <h2>Yangtze Finless Porpoise</h2>
+            <img src="images/porpoise.jpg" alt="Yangtze Finless Porpoise">
+            <h4><i class="material-icons">place</i> Yangtze River, China</h4>
+            <p>Reason: Environmental degradation, overfishing, and water pollution.</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">5</div>
+            <h2>Tapanuli Orangutan</h2>
+            <img src="images/tapanuli.jpg" alt="Tapanuli Orangutan">
+            <h4><i class="material-icons">place</i> Sumatra, Indonesia</h4>
+            <p>Reason: Loss of habitat due to agriculture, mining, and hydroelectric and geothermal development.</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">4</div>
+            <h2>Mountain Gorillas</h2>
+            <img src="images/mountainGorilla.jpg" alt="Mountain Gorillas">
+            <h4><i class="material-icons">place</i> Democratic Republic of Congo, Rwanda, and Uganda</h4>
+            <p>Reason: Loss of habitat due to the expansion of human settlement.</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">3</div>
+            <h2>Sunda Island Tiger</h2>
+            <img src="images/islandTiger.jpg" alt="Sunda Island Tiger">
+            <h4><i class="material-icons">place</i> Sumatra, Indonesia</h4>
+            <p>Reason: Loss of habitat due to the expansion of human settlement and poaching.</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">2</div>
+            <h2>Amur Leopard</h2>
+            <img src="images/amurLeopard.jpg" alt="Amur Leopard">
+            <h4><i class="material-icons">place</i> Russia and Northeastern China</h4>
+            <p>Reason: Loss and fragmentation of habitat, prey scarcity, and transportation infrastructure such as roads.</p>
+        </div>
+        <div class="box Terrestrial">
+            <div class="ranking">1</div>
+            <h2>Javan Rhinos</h2>
+            <img src="images/javanRhinos.jpg" alt="Javan Rhinos">
+            <h4><i class="material-icons">place</i> Java, Indonesia</h4>
+            <p>Reason: Hunting, loss of habitat, invading plant species that leave them with less food. Also, they are extremely vulnerable to extinction due to natural catastrophes, disease, poaching, and potential inbreeding.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('Marine').addEventListener('click', function() {
+    document.querySelectorAll('.box').forEach(box => {
+        box.style.display = box.classList.contains('Marine') ? 'block' : 'none';
+    });
+});
+
+document.getElementById('Terrestrial').addEventListener('click', function() {
+    document.querySelectorAll('.box').forEach(box => {
+        box.style.display = box.classList.contains('Terrestrial') ? 'block' : 'none';
+    });
+});
+
+document.getElementById('All').addEventListener('click', function() {
+    document.querySelectorAll('.box').forEach(box => {
+        box.style.display = 'block';
+    });
+});
+
+/*document.getElementById('Reset').addEventListener('click', function() {
+    document.querySelectorAll('.box').forEach(box => {
+        box.style.display = 'block';
+    });
+});*/
+
+document.getElementById('extinction-filter').addEventListener('change', function() {
+    const filterValue = this.value;
+    document.querySelectorAll('.box').forEach(box => {
+        const number = box.querySelector('.ranking').textContent.trim();
+        box.style.display = filterValue === 'all' || filterValue === number ? 'block' : 'none';
+    });
+});
+    </script>
